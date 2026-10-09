@@ -1,0 +1,12 @@
+# Frontend / Go generated locally
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.cache/
+frontend/coverage/
+*.log
+.env
+.env.*
+!.env.example
+# Local Docker test setup; not pushed to GitHub
+.local/

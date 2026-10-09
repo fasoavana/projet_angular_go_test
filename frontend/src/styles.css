@@ -1,0 +1,32 @@
+:root { font: 16px/1.5 system-ui, -apple-system, sans-serif; color: #102235; background: #f4f7fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.wrap { max-width: 940px; margin: 0 auto; padding: 64px 22px; }
+.eyebrow { font-size: 11px; letter-spacing: .15em; font-weight: 800; color: #4d6b80; }
+h1 { font-size: clamp(28px, 5vw, 46px); letter-spacing: -.05em; margin: 14px 0 12px; line-height: 1.15; }
+h1 span { color: #ef7239; }
+.intro { color: #546a7c; max-width: 700px; margin: 0 0 34px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.card { border: 1px solid #dae2eb; border-radius: 17px; padding: 26px; background: white; box-shadow: 0 4px 12px #1233; }
+.cardlabel { font-weight: 750; color: #667b8a; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+.status { font-size: 25px; font-weight: 800; margin: 9px 0; }
+.status.online { color: #15995a; }
+.meta { font-size: 13px; color: #63798b; overflow-wrap: anywhere; }
+.tasks { margin-top: 18px; }
+h2 { font-size: 22px; margin: 0 0 5px; }
+p { margin-top: 0; }
+.taskstop { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; }
+.taskstop p { color: #657a8c; font-size: 14px; }
+.taskform { display: flex; gap: 11px; margin: 22px 0; }
+input { flex: 1; min-width: 0; font: inherit; padding: 12px 15px; border: 1px solid #cbd6e2; border-radius: 10px; }
+button { border: 0; border-radius: 10px; padding: 12px 20px; background: #ed6d39; color: white; font: inherit; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .55; cursor: not-allowed; }
+button.secondary { background: #eaf0f5; color: #344a5c; }
+ul { list-style: none; padding: 0; margin: 0; }
+li { padding: 11px 0; border-top: 1px solid #eef2f6; display: flex; gap: 12px; align-items: center; }
+li .bullet { color: #15995a; font-weight: bold; }
+li .id { margin-left: auto; color: #889aaa; font-size: 13px; }
+.error { color: #bd2e34; }
+.empty { color: #7a8c9a; padding: 12px 0; }
+footer { text-align: center; margin-top: 28px; color: #8091a0; font-size: 12px; }
+@media(max-width: 650px) { .grid { grid-template-columns: 1fr; } .taskstop, .taskform { flex-direction: column; } input, button { width: 100%; } }
