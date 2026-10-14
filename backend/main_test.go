@@ -40,6 +40,8 @@ func TestMessage(t *testing.T) {
 }
 
 func TestCORS(t *testing.T) {
+	// Tester explicitement la compatibilité sans frontend configuré.
+	t.Setenv("FRONTEND_URL", "")
 	for _, origin := range []string{
 		"https://memoire-demo-frontend.valadeploy.internal",
 		"http://127.0.0.1:14200",
