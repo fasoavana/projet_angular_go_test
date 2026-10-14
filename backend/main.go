@@ -40,6 +40,14 @@ func allowedOrigin(origin string) bool {
 	if origin == "http://localhost:14200" || origin == "http://127.0.0.1:14200" || origin == "http://localhost:4200" {
 		return true
 	}
+
+	// ValaDeploy fournit l'origine exacte du frontend de cette stack.
+	// Ne pas autoriser les frontends des autres projets.
+	if configured := strings.TrimSpace(os.Getenv("FRONTEND_URL")); configured != "" {
+		return origin == configured
+	}
+
+	// Compatibilité avec les anciennes démonstrations sans FRONTEND_URL.
 	parsed, err := url.Parse(origin)
 	return err == nil && parsed.Scheme == "https" &&
 		strings.HasSuffix(parsed.Hostname(), "-frontend.valadeploy.internal") &&

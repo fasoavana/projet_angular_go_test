@@ -8,10 +8,23 @@ interface Health { status: string; service: string; database: string; }
 
 function apiBase(): string {
   const hostname = window.location.hostname;
-  if (hostname.endsWith('-frontend.valadeploy.internal')) {
-    const backend = hostname.replace(/-frontend\.valadeploy\.internal$/, '-backend.valadeploy.internal');
+
+  if (hostname.endsWith('-front.valadeploy.internal')) {
+    const backend = hostname.replace(
+      /-front\.valadeploy\.internal$/,
+      '-back.valadeploy.internal'
+    );
     return `https://${backend}/api/v1`;
   }
+
+  if (hostname.endsWith('-frontend.valadeploy.internal')) {
+    const backend = hostname.replace(
+      /-frontend\.valadeploy\.internal$/,
+      '-backend.valadeploy.internal'
+    );
+    return `https://${backend}/api/v1`;
+  }
+
   return '/api/v1'; // local Angular dev proxy -> Go container
 }
 const api = apiBase();
